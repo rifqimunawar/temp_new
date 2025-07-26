@@ -1,0 +1,8 @@
+{
+    "Settings": true,
+    "Master": true,
+    "User": true,
+    "Auth": true,
+    "Dashboard": true,
+    "Profile": true
+}
