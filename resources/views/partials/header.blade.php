@@ -99,7 +99,7 @@
         <div class="menu-text">{{ Auth::user()->username }}</div>
       </a>
       <div class="dropdown-menu dropdown-menu-end me-lg-3">
-        <a class="dropdown-item d-flex align-items-center" href="profile.html">Edit Profile <i
+        <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.index') }}">Edit Profile <i
             class="fa fa-user-circle fa-fw ms-auto text-body text-opacity-50"></i></a>
         <a class="dropdown-item d-flex align-items-center" href="email_inbox.html">Inbox <i
             class="fa fa-envelope fa-fw ms-auto text-body text-opacity-50"></i></a>

@@ -6,6 +6,7 @@ use App\Helpers\Fungsi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Modules\Settings\Http\Requests\SettingsRequest;
 use Modules\Settings\Models\settings;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -31,6 +32,12 @@ class SettingsController extends Controller
   public function store(SettingsRequest $request)
   {
     $data = $request->validated();
+    if ($data['password']) {
+      $data['password'] = Hash::make($data['password']);
+    } else {
+      unset($data['password']);
+    }
+    unset($data['konfirmasi']);
 
     if ($request->hasFile('logo')) {
       $extension = $request->file('logo')->getClientOriginalExtension();
